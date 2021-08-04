@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-//import ExpenseItem  from './components/ExpenseItem';
+//import logo from "./logo.svg";
+import "./App.css";
+
 import Expenses from "./components/Expenses/Expenses";
 
 import NewExpense from "./components/NewExpense/NewExpense";
