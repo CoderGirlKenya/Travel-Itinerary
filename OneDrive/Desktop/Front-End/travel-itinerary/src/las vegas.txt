@@ -1,0 +1,15 @@
+
+activities = [outdoors, tours, food]
+outdoors=[
+ "Madam Toussauds with Gondola Boat Ride", "Shark Reef at Mandalay Bay Hotel and Casino", "Marvel Avengers S.T.A.T.I.O.N at Treasure Island Hotel and Casino"
+
+ tours = [
+    "atv tour", "Grand Canyon West Rim Bus Tour","Las Vegas Strip Highlights Helicopter Tour", "Big Bus Las Vegas Hop-on Hop-off Open Top Tour"
+
+] 
+
+food = [
+    "Downtown Vegas Sightseeing and Foodie Tour"
+
+]
+
