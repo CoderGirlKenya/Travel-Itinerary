@@ -1,14 +1,33 @@
-1 event handler = onSubmit of destination
+1 event handler = onSubmit
 fetch data
 use routing
 3 unique hooks
+useState, 
 min 2 components
 
 want to be able to select date, destination, and activity
 
+What if I want to add a new parameter?
+newActivities component add new parameter
+
+What happens after submit?
+
+Add submit to adding new parameter
+
+Add submit to create itinerary
+
+itinerary shows selections for activities, list of essentials, things to remember
+
+create function for date on submit
+
 destinations = ["Las Vegas", "New York", "San Francisco", "Denver"]
 
-activities = [outdoors, tours, food]
+activities = {
+    destinations : [],
+    outdoors: [],
+    tours: [],
+    food: [],
+}
 ******Las Vegas********
 outdoors=[
  "Madam Toussauds with Gondola Boat Ride", "Shark Reef at Mandalay Bay Hotel and Casino", "Marvel Avengers S.T.A.T.I.O.N at Treasure Island Hotel and Casino"
@@ -30,3 +49,54 @@ food = ["New York Premier Dinner Cruise","Chinatown and Little Italy Food Fest",
 outdoors = ["Rocky Mountain Ziplining", "Beyond Light Show and Meditation", ]
 tours= ["Small Group Tour of Pike Peak and the Garden of the Gods","Whiskey, History and Outlaws Tour"]
 food = ["The Dinner Detective Murder Mystery Dinner Show"]
+
+destination = {activities[0].destination}
+      outdoors = {activities[0].outdoors}
+      tours = {activities[0].tours}
+      food = {activities[0].food}>
+      </Activities>
+      
+      <Activities 
+      destination = {activities[1].destination}
+      outdoors = {activities[1].outdoors}
+      tours = {activities[1].tours}
+      food = {activities[1].food}>  
+      </Activities>
+      
+      <Activities
+      destination = {activities[2].destination}
+      outdoors = {activities[2].outdoors}  
+      tours = {activities[2].tours}
+      food = {activities[2].food}>
+      </Activities>
+      
+
+      <h1>{props.destination}</h1>
+            <div>
+            <input type="date" name="travelDate"/>
+            <input type="date" name="travelReturnDate"/>
+            <select name = "outdoors">
+                <option value = ''> Select OutDoor Activities</option>
+                <option value = "1" > {props.outdoors[0]} </option>
+                <option value = "2" > {props.outdoors[1]} </option>
+                <option value = "3" > {props.outdoors[2]} </option>
+            </select>
+            
+            </div>
+            <div >
+                <select name = "tours">
+                <option value = ''>Select Tours</option>
+                <option value = "1">{props.tours[0]}</option>
+                <option value = "2">{props.tours[1]}</option>
+                <option value = "3">{props.tours[2]}</option>
+                </select>
+            </div>
+            <div>
+                <select name = "food">
+                <option value = ''>Select Food Activities</option>
+                <option value = "1">{props.food[0]}</option>
+                <option value = "2">{props.food[1]}</option>
+                <option value = "3">{props.food[2]}</option>
+                </select>
+            </div>
+            <button>Add to Itinerary</button>
