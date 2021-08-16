@@ -1,13 +1,8 @@
-//import React, { useState } from 'react';
-import './Activities.css';
-import React from 'react';
 
-const Activities=(props) =>{    
-    
+function VacationItem (props) {
 
-
-       return(
-        <div>
+    return (
+        <div> 
         <h1>{props.destination}</h1>
             <div>
             <input type="date" name="travelDate"/>
@@ -36,9 +31,15 @@ const Activities=(props) =>{
                 <option value = "3">{props.food[2]}</option>
                 </select>
             </div>
-            <button>Add to Itinerary</button>
-        </div>
-    )
+            <button>ADD TO ITINERARY</button>
+            </div>
+     )       
+
 }
 
-export default Activities;
+
+
+
+
+
+export default VacationItem;

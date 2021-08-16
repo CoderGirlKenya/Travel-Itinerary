@@ -100,3 +100,26 @@ destination = {activities[0].destination}
                 </select>
             </div>
             <button>Add to Itinerary</button>
+
+            <input type="date" name="travelDate"/>
+            <input type="date" name="travelReturnDate"/>
+            <select name = "outdoors">
+                <option value = ''> Select OutDoor Activities</option>
+                <option value = "1" > {props.items.outdoors[0]} </option>
+                <option value = "2" > {props.items.outdoors[1]} </option>
+                <option value = "3" > {props.items.outdoors[2]} </option>
+            </select>
+             <select name = "tours">
+                <option value = ''>Select Tours</option>
+                <option value = "1">{props.items.tours[0]}</option>
+                <option value = "2">{props.items.tours[1]}</option>
+                <option value = "3">{props.items.tours[2]}</option>
+                </select>
+
+                 <select name = "food">
+                <option value = ''>Select Food Activities</option>
+                <option value = "1">{props.items.food[0]}</option>
+                <option value = "2">{props.items.food[1]}</option>
+                <option value = "3">{props.items.food[2]}</option>
+                />
+            </div>
