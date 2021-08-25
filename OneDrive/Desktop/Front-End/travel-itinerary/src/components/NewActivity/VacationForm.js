@@ -28,11 +28,12 @@ const VacationForm = (props) => {
             return (
 
             <form onSubmit={addToIntinerary}>
+            
                 <div>
                     <input type = "text" 
                     value = {enteredDestination}
                     onChange = {destinationChangeHandler}
-                    />    
+                    />  
                 </div>
                 <div>
                     <input type = "text" 
@@ -43,6 +44,7 @@ const VacationForm = (props) => {
                 <div>
                     <button type ='submit'>ADD TO PLANNER</button>
                 </div>
+        
             </form>
             )
         };
