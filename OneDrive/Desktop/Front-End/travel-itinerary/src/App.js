@@ -32,10 +32,11 @@ function App() {
   const [activities, setActivities] = useState(initialVacations);
 
     const addNewVacationHandler = (activity) => {
-      // setActivities((prevActivities) => {
-      //   return [activity, ...prevActivities]
+  //    setActivities((prevActivities) => {
+  //        return [activity, ...prevActivities]
       
-      // });
+       
+  // });
     }
   
    

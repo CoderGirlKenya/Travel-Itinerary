@@ -7,6 +7,7 @@ function Vacation (props) {
         {props.items.map((activities) => {
             return(
         <VacationItem 
+        key = {activities.id}
         destination = {activities.destination} 
         outdoors = {activities.outdoors} 
         tours = {activities.tours} 
