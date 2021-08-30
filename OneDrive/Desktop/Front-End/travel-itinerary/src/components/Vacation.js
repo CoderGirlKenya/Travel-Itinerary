@@ -1,17 +1,24 @@
+
 import VacationItem from "./VacationItem";
 
 function Vacation (props) {
     return (
         <div>
         <div>
-        {props.items.map((activities) => {
+        {props.items.map((vacation) => {
             return(
-        <VacationItem 
-        key = {activities.id}
-        destination = {activities.destination} 
-        outdoors = {activities.outdoors} 
-        tours = {activities.tours} 
-        food ={activities.food}
+        <VacationItem
+        key = {vacation.id}
+        destination = {vacation.destination} 
+        type = {{
+            outdoors : vacation.type.outdoors,
+            tours: vacation.type.tours,
+            food: vacation.type.food,
+            }}
+
+        // type = {vacation.outdoors,
+        //         vacation.tours,
+        //        vacation.food}
         />
             )
         })}
