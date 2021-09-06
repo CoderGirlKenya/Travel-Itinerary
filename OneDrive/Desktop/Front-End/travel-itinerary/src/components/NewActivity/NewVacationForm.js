@@ -3,37 +3,65 @@ import React, {useState} from "react";
 
 
 const NewVacationForm = (props) => {
-        const [enteredDestination, setEnteredDestination] = useState('');
-        const [enteredActivity, setEnteredActivity] = useState('');
-        const [enteredType,  setSelectedType] = useState('');
+    const [enteredDestination, setEnteredDestination] = useState('');
+    const [enteredActivity, setEnteredActivity] = useState('');
+    const [activityTypeKey,setActivityTypeKey]= useState(false);
+    const [enteredType,  setSelectedType] = useState(
+        [{
+        outdoors : [],
+        tours: [],
+        food: [],
+        }]
+    );
+    
     
 
-        
+    const activityTypeArray= ["OUTDOORS","TOURS","FOOD"]
+    
 
-             const destinationChangeHandler = (event) => {
-                 setEnteredDestination(event.target.value)
-              console.log(event);
-             };
+         const destinationChangeHandler = (event) => {
+             setEnteredDestination(event.target.value)
+             return event.target.value
+          //console.log(event);
+         }
+    
+        const activityChangeHandler = (event) => {
+            setEnteredActivity(event.target.value);
+            return event.target.value
+        };
         
-            const activityChangeHandler = (event) => {
-                setEnteredActivity(event.target.value);
-            };
         
-            const setType = (event) => {
-                setSelectedType(event.target.value)
-            }
-            const addToPlanner = (event) => {
-                event.preventDefault();
+        const setType = (event) => {
+    
+             const activityType = event.target.value;
+
+             setSelectedType(activityType);
             
-                // const newVacationData = {
-                //     id: Math.random().toString(),
-                //     destination : enteredDestination,
-                //     type: {enteredType: enteredActivity},
-                // };
-                //console.log(newVacationData);
-            }
-    
+             console.log(activityType)
 
+         const vacationListHandler = 
+            {
+                key: Math.random().toString(),
+                destination : enteredDestination,
+                type: enteredType,
+            }
+        
+            console.log(vacationListHandler);
+        }
+
+
+              
+               
+            // const addToPlanner = (event) => {
+            //     event.preventDefault();
+            //     console.log(setVacationList)
+            // };
+            
+           //props.addToPlanner(setVacationListHandler);
+               
+             
+
+             
             return (
                 <form >
             
@@ -48,11 +76,12 @@ const NewVacationForm = (props) => {
                 </div>
                 <div>
                 
-                <select  onChange={setType} value = {enteredType}>
-                <option >SELECT ACTIVITY TYPE</option>
-                <option >OUTDOOR</option>               
-                <option >TOUR</option>
-                <option >FOOD</option>
+                <select onChange={setType}>
+                <option >SELECT ACTIVITY TYPE</option> */
+                {props.items.map((activityTypeAr,index) => 
+                <option value={enteredType} key={Math.random().toString()}> {activityTypeArray}</option> 
+                 )}
+            
                 </select>
                     <input type = "text" 
                     value = {enteredActivity} 
@@ -62,7 +91,7 @@ const NewVacationForm = (props) => {
         
                  </div>
                 <div>
-                    <button type= "button" onClick={addToPlanner}>ADD TO PLANNER</button>
+                    <button type= "button" onClick={()=>props.addToPlanner(props.vacationListHandler)}>ADD TO PLANNER</button>
                 </div>
         </div>
         </form>
