@@ -1,4 +1,4 @@
-const INITAL_VACATIONS = [
+export const INITAL_VACATIONS = [
     {
       id: Math.random().toString(),
       destination: "Las Vegas",

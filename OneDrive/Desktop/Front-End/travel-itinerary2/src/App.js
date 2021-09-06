@@ -2,7 +2,6 @@ import Necessities from "./Data/Necessities";
 import React, { useState } from "react";
 import NewVacationForm from "./Components/NewVacationForm";
 import {INITAL_VACATIONS} from "./Data/VacationList";
-import VacationList from "./Data/VacationList";
 import VacationItem from "./Data/VacationItem";
 
 const App =()=>{
@@ -16,11 +15,11 @@ const App =()=>{
     return (
         <form>
         <div>
-        {VacationList.INITAL_VACATIONS.map(vacations => (
+        {vacations.map(INITAL_VACATIONS => (
         <VacationItem
-        id = {vacations.id}
-        destination = {vacations.destination} 
-        activityType = {vacations.activityType}
+        id = {INITAL_VACATIONS.id}
+        destination = {INITAL_VACATIONS.destination} 
+        activityType = {INITAL_VACATIONS.activityType}
         // outdoors={vacations.type.outdoors}
         // tours = {vacations.type.tours}
         // food = {vacations.type.food}

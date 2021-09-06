@@ -1,4 +1,9 @@
-const VacationItem = (props) => {
+import React from "react";
+import {INITAL_VACATIONS} from "./VacationList";
+import App from "../App";
+
+const VacationItem = props => {
+    const {item,VacationReady} = props;
      //  const [enteredDestination, setEnteredDestination] = useState('');
      //const [enteredActivity, setEnteredActivity] = useState('');
      // const [enteredType,  setSelectedType] = useState('');
@@ -8,7 +13,7 @@ const VacationItem = (props) => {
          //      "food":enteredActivity,
          // }
      
-             const addToGo = (event) => {
+             const addToPlanner = (event) => {
              event.preventDefault();
          
              
@@ -22,9 +27,9 @@ const VacationItem = (props) => {
              <input type="date" name="travelReturnDate"/>
              <select name = "outdoors" >
                  <option value = ''> Select OutDoor Activities</option> 
-                 {props.type.outdoors.map((outdoorsType,index) => 
-                 <option value={index} key={Math.random().toString()}> {outdoorsType}</option> 
-                  )}
+                 {/* {props.outdoors.map((outdoorsType,index) =>  
+                 {/* <option value={index} key={Math.random().toString()}> {outdoorsType}</option>  */}
+                )} */}
                  {/* <option value = "1" > {props.type.outdoors[0]} </option>
                   <option value = "2" > {props.type.outdoors[1]} </option>
                  <option value = "3" > {props.type.outdoors[2]} </option>  */}
@@ -34,9 +39,9 @@ const VacationItem = (props) => {
              <div >
                 <select name = "tours" >
                  <option value = ''>Select Tours</option>
-                 {props.type.tours.map((toursType,index) => 
-                 <option value={index} key={Math.random().toString()}> {toursType}</option> 
-                 )}
+                 {/* {props.tours.map((toursType,index) =>  */}
+                 {/* <option value={index} key={Math.random().toString()}> {toursType}</option>  */}
+                 {/* )} */}
                  {/* <option value = "1">{props.type.tours[0]}</option>
                  <option value = "2">{props.type.tours[1]}</option>
                  <option value = "3">{props.type.tours[2]}</option>  */}
@@ -45,15 +50,15 @@ const VacationItem = (props) => {
              <div>
                  <select name = "food">
                  <option value = ''>Select Food Activities</option>
-                 {props.type.food.map((foodType,index) => 
-                 <option value={index} key={Math.random().toString()}> {foodType}</option> 
-                 )}
+                 {/* {props.food.map((foodType,index) =>  */}
+                 {/* <option value={index} key={Math.random().toString()}> {foodType}</option>  */}
+                 {/* )} */}
                  {/* <option value = "1">{props.type.food[0]}</option>
                  <option value = "2">{props.type.food[1]}</option>
                  <option value = "3">{props.type.food[2]}</option> */}
                  </select>
              </div>
-             <button onClick ={addToGo}>READY TO CONQUER VACATION</button>
+             <button onClick ={addToPlanner}>READY TO CONQUER VACATION</button>
              </div>
              
      )
