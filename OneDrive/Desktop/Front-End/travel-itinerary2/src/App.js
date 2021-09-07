@@ -1,32 +1,35 @@
-import Necessities from "./Data/Necessities";
+
 import React, { useState } from "react";
-import NewVacationForm from "./Components/NewVacationForm";
-import {INITAL_VACATIONS} from "./Data/VacationList";
+import NewVacation from "./Components/NewVacation";
+import {INITIAL_VACATIONS} from "./Data/VacationList";
 import VacationItem from "./Data/VacationItem";
 
-const App =()=>{
-  const [vacations, setNewVacations] = useState(INITAL_VACATIONS);
-  // const [enteredDestination, setEnteredDestination] = useState("");
-  // const [enteredActivity, setEnteredActivity] = useState("");
-  // const [selectedType, setSelectedType] = useState({});
-  // console.log(initialVacations);
-  
+const App =(props)=>{
+  const [vacations, setNewVacations] = useState(INITIAL_VACATIONS);
+  const addVacationHandler = (vacations) =>{
+    setNewVacations((prevVacations) =>{
+      return [vacations, ...prevVacations];
+    });
+    console.log(vacations)
+  };
   
     return (
         <form>
         <div>
-        {vacations.map(INITAL_VACATIONS => (
-        <VacationItem
-        id = {INITAL_VACATIONS.id}
-        destination = {INITAL_VACATIONS.destination} 
-        activityType = {INITAL_VACATIONS.activityType}
+        <NewVacation onAddVacation={addVacationHandler}/>
+        </div>
+        <div>
+        {INITIAL_VACATIONS.map(vacations => (
+        <VacationItem 
+        key= {vacations.id}
+        destination = {vacations.destination} 
+        activityType = {vacations.activityType}
         // outdoors={vacations.type.outdoors}
         // tours = {vacations.type.tours}
         // food = {vacations.type.food}
         
         />
         ))} 
-         
         
         </div>
         </form>

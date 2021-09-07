@@ -1,64 +1,46 @@
 import React,{useState} from "react";
-import Vacation from "./Vacation";
-import App from "../App";
+
 
 const NewVacationForm = (props) => {
+    // const [vacations, setAddVacation] = useState(INITAL_VACATIONS);
     const [enteredDestination, setEnteredDestination] = useState('');
+
     const [enteredActivity, setEnteredActivity] = useState('');
     
-    //const [activityTypeKey,setActivityTypeKey]= useState(["OUTDOORS", "TOURS", "FOOD"]);
+    const [activityTypeObj,setActivityType]= useState("");
 
-    const [enteredType,  setSelectedType] = useState(
-        {
-        outdoors : [],
-        tours: [],
-        food: [],
-        }
-    );
-    
-   
-         const destinationChangeHandler = (event) => {
-             setEnteredDestination(event.target.value)
-             return event.target.value
-          //console.log(event);
-         }
+    const activityTypeArray = ["OUTDOORS", "TOURS", "FOOD"];
+
+          const destinationChangeHandler = (event) => {
+              setEnteredDestination(event.target.value)
+              
+            };            
     
         const activityChangeHandler = (event) => {
-            setEnteredActivity(event.target.value);
-            return event.target.value
-        };
+            setEnteredActivity(event.target.value)
+             };
         
+            const activityTypeChangeHandler = (event) =>{
+                setActivityType(event.target.value)
+            };
         
-        const setType = (event) => {
-    
-             const activityType = event.target.value;
-             setSelectedType(activityType);
+            const addToList = (event) => {
+                event.preventDefault();
+                
+               const vacationData = {
+                    id : Math.random().toString(),
+                    destination: enteredDestination,
+                    activityType: {activityTypeObj: [enteredActivity]}
+                }
+                
+                props.onSaveVacation(vacationData)
             
-             console.log(activityType)
-         const vacationListHandler = 
-            {
-                key: Math.random().toString(),
-                destination : enteredDestination,
-                type: enteredType,
-            }
-        
-            console.log(vacationListHandler);
-        }
-
-              
-               
-            // const addToPlanner = (event) => {
-            //     event.preventDefault();
-            //     console.log(setVacationList)
-            // };
-            
-           //props.addToPlanner(setVacationListHandler);
-               
-             
+               setEnteredDestination('');
+               setActivityType('');
+               setEnteredActivity('');
+            };
              
             return (
-                <form >
-            
             <div>
                 <div>
                 <label>DESTINATION</label>
@@ -66,30 +48,37 @@ const NewVacationForm = (props) => {
                     type = "text"
                      value = {enteredDestination}
                      onChange = {destinationChangeHandler}
+                    //  key={Math.random().toString()}
                     />  
                 </div>
                 <div>
                 
-                <select onChange={setType}>
-                <option >SELECT ACTIVITY TYPE</option> */
-                {/* {enteredType.map((activityTypeArray,index) =>  */}
-                <option value={enteredType} key={Math.random().toString()}> {enteredType}</option> 
-                 {/* )} */}
-            
+                <select 
+                onChange={activityTypeChangeHandler} 
+                value={activityTypeObj}
+                // key={Math.random().toString()}
+                >
+                <option>SELECT ACTIVITY TYPE</option> */
+                {activityTypeArray.map((activityType,index) => (
+                <option >{activityType}</option> 
+                ))} 
                 </select>
-                    <input type = "text" 
+                    <input
+                     type = "text" 
                     value = {enteredActivity} 
                     onChange={activityChangeHandler}
+                    // key={Math.random().toString()} 
                    />
-                
-        
+                {/* ={()=>props.onSaveVacation(props.vacationListHandler)}
+         */}
                  </div>
                 <div>
-                    <button type= "button" onClick={()=>props.addToPlanner(props.vacationListHandler)}>ADD TO PLANNER</button>
+                    <button type= "button" onClick={addToList}> ADD TO PLANNER </button>
                 </div>
+    
         </div>
-        </form>
             )
+        
         };
 
 
