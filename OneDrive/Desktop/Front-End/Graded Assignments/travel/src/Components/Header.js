@@ -20,10 +20,10 @@ const Header = () => {
                 <NavLink to='/'>BEGAN TO DREAM</NavLink>
                 </li>
                 <li>
-                <NavLink to='/vacationItems'>PLAN VACATION</NavLink>
+                <NavLink to='/vacationItems'>VIEW VACATION</NavLink>
                 </li>
                 <li>
-                <NavLink to='/newVacationForm'>VIEW VACATIONS</NavLink>
+                <NavLink to='/newVacationForm'>PLAN VACATIONS</NavLink>
                 </li>
                 <li>
                 <NavLink to='/necessities'>TRAVEL NEEDS</NavLink>
@@ -31,7 +31,7 @@ const Header = () => {
             </ul>
             </Route>
         </nav>
-        <button type="button" >HOME</button>
+        
         </header>
     )
 }

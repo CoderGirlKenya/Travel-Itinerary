@@ -6,6 +6,10 @@
     "Hair Products", "Hygience Products", "Medication","Travel Documents", "Dog Sitter","Undergarments",,"Outfits", "Swim Wear","Accessories", "Shoes","Hair Products", "Hygience Products", "Medication", 
     "Travel Documents", "Dog Sitter"])
 
+    const ifChecked = (needs) => {
+        
+    }
+
 
     return (
         <div>

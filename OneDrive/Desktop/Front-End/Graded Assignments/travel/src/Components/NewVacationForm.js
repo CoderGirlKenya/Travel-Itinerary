@@ -1,10 +1,11 @@
 import React, {useState, useRef} from "react";
+import VacationsItems from "./VacationItems";
 
 
  const isEmpty = value => value.trim() === '';
 
 const NewVacationForm = (props) => {
-    const [newVacation, setNewVacation] = useState([]);
+    
     const [formIsValid, setFormIsValid] = useState(false);
 
     const destinationInputRef = useRef(props.destination);
@@ -31,12 +32,11 @@ const NewVacationForm = (props) => {
             const enteredFoodActivityIsValid = !isEmpty(enteredFoodActivity);
                     console.log(enteredDestinationIsValid);   
         if(formIsValid === enteredDestinationIsValid && enteredToursActivityIsValid && enteredOutdoorsActivityIsValid && enteredFoodActivityIsValid){
-                setFormIsValid(true);
-            }
-
-         
-             
-                const validVacation =
+                setFormIsValid(true);  
+        }
+                
+                if (formIsValid){
+                const validVacation =[
                 {
                     id: enteredDestination,
                     destination: enteredDestination,
@@ -45,18 +45,22 @@ const NewVacationForm = (props) => {
                     foodActivity: enteredFoodActivity,
 
                 }
-            
-            setNewVacation(validVacation);
-            
-            
-                localStorage.setItem('validVacation', JSON.stringify(validVacation)); 
-                
-                const newVacationObj = localStorage.getItem('validVacation');
+                ]
 
-                console.log(newVacationObj);
+                localStorage.setItem('validVacation', JSON.stringify(validVacation)); 
+            
+                                                                   
+                
+            }
+            
+                
+               
+
+                
+        }
 
                 // console.log(`newVacationObj:  ',JSON.parse(newVacationObj);
-            }
+            
 
     return (
         <div>

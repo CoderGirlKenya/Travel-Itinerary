@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import {validVacation, newVacation} from "./NewVacationForm";
 
 const VacationsItems = (props) => {
-    const [newVacations, setNewVacations] =useState([]);
+    const [newVacation, setNewVacation] = useState(localStorage.getItem('vacations'));
+    
+    const addedVacation =  localStorage.getItem('validVacation');
+
+    
+    
 
     
 
@@ -9,10 +15,17 @@ const VacationsItems = (props) => {
     
     return (
         <section>
-                <li >{props.destination}</li>
-                <li>{props.outdoorActivity}</li>
-                <li>{props.toursActivity}</li>
-                <li>{props.foodActivity}</li>    
+
+                {/* // <li>{addVacation.destination}</li>
+                // <li>{addVacation.outdoorActivity}</li>
+                // <li>{addVacation.toursActivity}</li>
+                // <li>{addVacation.foodActivity}</li>  */}
+
+                   
+                <div>{addedVacation}</div>
+                
+                <div>{newVacation}</div>
+            
         </section>
     )
 

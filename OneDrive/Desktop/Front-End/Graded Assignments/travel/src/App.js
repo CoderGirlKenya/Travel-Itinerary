@@ -37,28 +37,31 @@ const INITIAL_VACATIONS = [
 const App = (props) => {
  const [vacations, setVacations] = useState(INITIAL_VACATIONS);
  
+ localStorage.setItem('vacations', JSON.stringify(vacations)); 
+                
+
 
   return (
     
   <BrowserRouter>
     <div>
-         <Header/>
+      <Header/>
     </div>
         <Switch>
       
            <Route path = "/" component={Intro} exact/>
 
           <Route path="/vacationItems" component={VacationItems}>   
-          {vacations.map(vacation => ( 
+          {/* {vacations.map(vacation => (  */}
          <VacationItems 
-           key={vacation.destination}
-           id={vacation.destination}
-           destination={vacation.destination}
-           outdoorsActivity={vacation.outdoorsActivity}
-           toursActivity={vacation.toursActivity}
-           foodActivity={vacation.foodActivity}
+           key={vacations.destination}
+           id={vacations.destination}
+           destination={vacations.destination}
+           outdoorsActivity={vacations.outdoorsActivity}
+           toursActivity={vacations.toursActivity}
+           foodActivity={vacations.foodActivity}
            />
-           ))}  
+           {/* ))}   */}
            </Route>
 
            <Route path="/newVacationForm" component={NewVacationForm}/>
